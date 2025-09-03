@@ -4,8 +4,8 @@ import click
 import os
 from typing import Optional
 
-from core.config import Settings, create_default_settings
-from core.binder_design import BinderDesigner
+from bindcraft_nhej.core.config import Settings, create_default_settings
+from bindcraft_nhej.core.binder_design import BinderDesigner
 
 
 @click.group()

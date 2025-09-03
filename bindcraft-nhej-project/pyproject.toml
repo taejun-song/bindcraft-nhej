@@ -2,7 +2,7 @@
 name = "bindcraft-nhej"
 version = "0.1.0"
 description = "BindCraft NHEJ - Protein binder design using non-homologous end joining"
-readme = "README.md"
+readme = "../README.md"
 requires-python = ">=3.11"
 authors = [
     {name = "BindCraft NHEJ Team"}
