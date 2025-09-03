@@ -1,0 +1,118 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Project specific
+*.pdb
+*.json
+/designs/
+/bindcraft/
+/params/
+/functions/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Python cache
+*.pyc
+__pycache__/
+
+# uv
+.python-version
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Output directories
+/output/
+/results/
+/trajectories/
+/accepted/
+/rejected/
+/mpnn/
+
+# Model files and data
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+
+# Large data files
+*.tar
+*.tar.gz
+*.zip
