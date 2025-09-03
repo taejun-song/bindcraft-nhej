@@ -2,10 +2,10 @@
 
 import click
 import os
-from typing import Optional, List
+from typing import Optional
 
-from ..core.config import Settings, AdvancedSettings, create_default_settings
-from ..core.binder_design import BinderDesigner
+from core.config import Settings, create_default_settings
+from core.binder_design import BinderDesigner
 
 
 @click.group()

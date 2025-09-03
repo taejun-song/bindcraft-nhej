@@ -54,9 +54,9 @@ cuda = [
 bindcraft-nhej = "bindcraft_nhej.cli.main:cli"
 
 [project.urls]
-Homepage = "https://github.com/your-username/bindcraft-nhej"
-Repository = "https://github.com/your-username/bindcraft-nhej.git"
-Issues = "https://github.com/your-username/bindcraft-nhej/issues"
+Homepage = "https://github.com/taejun-song/bindcraft-nhej"
+Repository = "https://github.com/taejun-song/bindcraft-nhej.git"
+Issues = "https://github.com/taejun-song/bindcraft-nhej/issues"
 
 [build-system]
 requires = ["hatchling"]
