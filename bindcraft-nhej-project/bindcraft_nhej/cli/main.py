@@ -16,9 +16,9 @@ def cli():
 
 
 @cli.command()
-@click.option('--design-path', required=True, help='Path to save designs')
-@click.option('--binder-name', required=True, help='Name prefix for binders')
-@click.option('--starting-pdb', required=True, help='Path to target PDB structure')
+@click.option('--design-path', help='Path to save designs')
+@click.option('--binder-name', help='Name prefix for binders')
+@click.option('--starting-pdb', help='Path to target PDB structure')
 @click.option('--chains', default='A', help='Target chains (comma-separated)')
 @click.option('--target-hotspot-residues', default='', help='Target hotspot residues')
 @click.option('--min-length', default=30, help='Minimum binder length')
@@ -26,9 +26,9 @@ def cli():
 @click.option('--number-of-designs', default=2, help='Number of final designs required')
 @click.option('--config', help='Load configuration from JSON file')
 def design(
-    design_path: str,
-    binder_name: str,
-    starting_pdb: str,
+    design_path: Optional[str],
+    binder_name: Optional[str],
+    starting_pdb: Optional[str],
     chains: str,
     target_hotspot_residues: str,
     min_length: int,
@@ -38,11 +38,28 @@ def design(
 ):
     """Run binder design with specified parameters."""
     
-    if config and os.path.exists(config):
+    if config:
+        if not os.path.exists(config):
+            click.echo(f"Error: Configuration file {config} not found", err=True)
+            return
         # Load from config file
         settings = Settings.load(config)
         click.echo(f"Loaded configuration from {config}")
     else:
+        # Validate required parameters when no config file
+        missing = []
+        if not design_path:
+            missing.append('--design-path')
+        if not binder_name:
+            missing.append('--binder-name') 
+        if not starting_pdb:
+            missing.append('--starting-pdb')
+            
+        if missing:
+            click.echo(f"Error: Missing required options: {', '.join(missing)}", err=True)
+            click.echo("Either provide --config or all required parameters", err=True)
+            return
+            
         # Create from command line arguments
         settings = create_default_settings(
             design_path=design_path,
